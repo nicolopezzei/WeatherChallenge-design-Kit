@@ -1,0 +1,283 @@
+/* =========================================================
+   WeatherChallenge - Login
+   Mobile first. Tutte le classi hanno il prefisso .wcl-
+   così non confliggono con Bootstrap o style.css.
+   ========================================================= */
+
+:root {
+    --wcl-sky: #8fd0fb;
+    --wcl-sky-low: #dcf1fd;
+    --wcl-header: #1857b3;      /* bianco su questo blu: contrasto > 7:1 */
+    --wcl-header-soft: #2d6fd0; /* badge: bianco su questo blu > 4.5:1 */
+    --wcl-yellow: #f8c63a;
+    --wcl-blue: #1857b3;
+    --wcl-deep: #17465b;
+    --wcl-text: #24343d;
+    --wcl-muted: #4a5c64;
+    --wcl-line: #dbe6eb;
+    --wcl-soft: #f1f8fc;
+    --wcl-ok: #2e7d32;          /* bianco su verde/rosso: contrasto > 5:1 */
+    --wcl-low: #c0392b;
+    --wcl-focus: #005fcc;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: var(--wcl-text);
+    background: var(--wcl-sky);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Pagina e card ---------- */
+
+.wcl-page {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: flex-start;          /* su telefono la card parte dall'alto */
+    justify-content: center;
+    padding: max(12px, env(safe-area-inset-top)) 12px max(12px, env(safe-area-inset-bottom));
+    background: linear-gradient(180deg, var(--wcl-sky) 0%, var(--wcl-sky-low) 100%);
+}
+
+.wcl-card {
+    width: min(100%, 440px);
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 18px 50px rgba(25, 82, 105, .18);
+}
+
+/* ---------- Intestazione blu ---------- */
+
+.wcl-header {
+    text-align: center;
+    padding: 18px 18px 18px;
+    background: var(--wcl-header);
+    color: #fff;
+}
+
+.wcl-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.wcl-logo {
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+}
+.wcl-logo img { display: block; width: 100%; height: 100%; object-fit: contain; padding: 2px; }
+
+.wcl-header h1 {
+    margin: 0;
+    font-size: clamp(1.6rem, 7.5vw, 2.1rem);
+    font-weight: 800;
+    letter-spacing: -.02em;
+    line-height: 1.05;
+    color: #fff;
+}
+.wcl-header h1 span { color: var(--wcl-yellow); }
+
+.wcl-hook {
+    margin: 12px 0 2px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.wcl-sub {
+    margin: 0 auto;
+    max-width: 320px;
+    font-size: .9rem;
+    line-height: 1.4;
+    color: #e6f0ff;
+}
+
+.wcl-live {
+    display: inline-block;
+    margin: 10px 0 0;
+    padding: 4px 14px;
+    border-radius: 999px;
+    background: var(--wcl-header-soft);
+    color: #fff;
+    font-size: .85rem;
+}
+.wcl-live[hidden] { display: none; }
+
+/* ---------- Corpo ---------- */
+
+.wcl-body { padding: 16px 20px 20px; }
+
+.wcl-alert {
+    margin: 0 0 14px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: .88rem;
+    line-height: 1.45;
+}
+.wcl-alert-err { background: #fdeceb; color: #8f1d14; }
+.wcl-alert-ok  { background: #eaf6ec; color: #1b5e20; }
+
+/* Bottone Google */
+
+.wcl-google {
+    width: 100%;
+    min-height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 18px;
+    border: 1px solid #aebfc6;
+    border-radius: 12px;
+    background: #fff;
+    color: #1f2d33;
+    font: 800 1rem/1 "Nunito", system-ui, sans-serif;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(31, 55, 65, .1);
+    transition: background-color .15s, border-color .15s, box-shadow .15s;
+}
+.wcl-google:hover { background: var(--wcl-soft); border-color: var(--wcl-blue); box-shadow: 0 5px 14px rgba(31, 55, 65, .14); }
+.wcl-google:focus-visible { outline: 3px solid var(--wcl-focus); outline-offset: 3px; }
+
+.wcl-note {
+    margin: 8px 0 0;
+    text-align: center;
+    font-size: .85rem;
+    color: var(--wcl-muted);
+}
+
+/* Statistiche aggregate (prima schermata) */
+
+.wcl-stats {
+    margin: 14px 0 0;
+    padding: 12px 0 0;
+    border-top: 1px solid var(--wcl-line);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: 8px;
+    text-align: center;
+}
+.wcl-stats div { display: flex; flex-direction: column-reverse; }
+.wcl-stats dd { margin: 0; font-size: 1.3rem; font-weight: 800; color: var(--wcl-deep); line-height: 1.1; }
+.wcl-stats .is-main dd { font-size: 1.7rem; color: var(--wcl-blue); }
+.wcl-stats dt { font-size: .78rem; color: var(--wcl-muted); }
+
+/* ---------- Sezioni sotto la piega ---------- */
+
+.wcl-h2 {
+    margin: 22px 0 10px;
+    padding-top: 16px;
+    border-top: 1px solid var(--wcl-line);
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--wcl-deep);
+}
+
+.wcl-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+.wcl-steps li {
+    padding: 10px 6px;
+    border-radius: 12px;
+    background: var(--wcl-soft);
+    text-align: center;
+    font-size: .8rem;
+    line-height: 1.35;
+    color: var(--wcl-muted);
+}
+.wcl-steps span { display: block; font-size: 1.5rem; margin-bottom: 2px; }
+.wcl-steps b { display: block; font-size: .85rem; color: var(--wcl-text); }
+
+/* Grafico a barre di esempio */
+
+.wcl-chart {
+    height: 130px;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 6px;
+    align-items: end;
+}
+.wcl-bar {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    justify-items: center;
+    align-items: end;
+    gap: 2px;
+}
+.wcl-bar-val { font-size: .72rem; font-weight: 700; color: var(--wcl-text); }
+.wcl-bar-fill { width: 100%; max-width: 30px; border-radius: 5px 5px 0 0; }
+.wcl-bar.is-ok  .wcl-bar-fill { background: var(--wcl-ok); }
+.wcl-bar.is-low .wcl-bar-fill { background: var(--wcl-low); }
+.wcl-bar-day { font-size: .75rem; font-weight: 700; color: var(--wcl-muted); }
+
+.wcl-caption {
+    margin: 8px 0 0;
+    font-size: .78rem;
+    text-align: center;
+    color: var(--wcl-muted);
+}
+
+.wcl-privacy {
+    margin: 16px 0 0;
+    font-size: .78rem;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--wcl-muted);
+}
+
+/* ---------- Footer ---------- */
+
+.wcl-footer {
+    padding: 12px 18px;
+    background: var(--wcl-soft);
+    border-top: 1px solid var(--wcl-line);
+    text-align: center;
+    font-size: .76rem;
+    color: var(--wcl-muted);
+}
+
+/* ---------- Schermi più larghi ---------- */
+
+@media (min-width: 576px) {
+    .wcl-page { align-items: center; padding: 32px 20px; }
+    .wcl-card { width: min(100%, 480px); }
+    .wcl-header { padding: 26px 32px 22px; }
+    .wcl-body { padding: 20px 32px 28px; }
+}
+
+/* Telefoni bassi: ancora più compatto, il bottone resta nella prima schermata */
+@media (max-height: 640px) and (max-width: 575px) {
+    .wcl-header { padding-top: 12px; padding-bottom: 12px; }
+    .wcl-hook { margin-top: 8px; }
+    .wcl-live { margin-top: 8px; }
+    .wcl-body { padding-top: 12px; }
+}
+
+/* ---------- Accessibilità ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+}
+
+@media (forced-colors: active) {
+    .wcl-google { border: 2px solid ButtonText; }
+    .wcl-bar-fill { background: Highlight !important; }
+}

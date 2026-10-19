@@ -1,0 +1,28 @@
+/* Voci del menu su telefono.
+   Nel sito vero queste regole stanno dentro menu.php (blocco <style>). */
+
+.mobile-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #1e293b;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background .15s;
+    border-bottom: 1px solid #f1f5f9;
+}
+.mobile-menu-item:last-child { border-bottom: none; }
+.mobile-menu-item:active { background: #f0f4f8; }
+
+/* Voci principali leggermente evidenziate */
+.mobile-menu-item--primary { background: #f0f9ff; color: #0369a1; }
+.mobile-menu-item--primary:active { background: #e0f2fe; }
+
+.mmi-icon  { font-size: 1.3rem; flex-shrink: 0; }
+.mmi-label { flex: 1; }
+
+/* Voce della pagina corrente */
+.mobile-menu-item--active { background: #dbeafe; color: #1d4ed8; font-weight: 800; }

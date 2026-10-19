@@ -1,0 +1,43 @@
+/* ============================================================
+   TEMA: il punto di partenza per le prime modifiche
+
+   Questo file si carica per ULTIMO, quindi quello che scrivi qui
+   vince sugli altri fogli di stile. I valori scritti sono quelli
+   attuali del sito: cambiali e ricarica la pagina per vedere l'effetto.
+
+   Quando una modifica ti piace, annota il file e la riga: potrà
+   essere riportata nel sito vero.
+   ============================================================ */
+
+:root {
+    /* Cielo: sfondo a gradiente delle pagine con contenitore bianco */
+    --wc-cielo-alto: #89f7fe;
+    --wc-cielo-basso: #66a6ff;
+
+    /* Colori dei punteggi: bene, medio, male (valgono per tutte le pagine) */
+    --green: #22c55e;
+    --orange: #f59e0b;
+    --red: #ef4444;
+
+    /* Forme */
+    --wc-raggio-contenitore: 10px;   /* il grande riquadro bianco */
+    --wc-raggio-card: 14px;          /* card di liste, storico e classifica */
+
+    /* Font dei titoli */
+    --wc-font-titoli: 'Raleway', sans-serif;
+}
+
+body.bg-light {
+    background-image: linear-gradient(135deg, var(--wc-cielo-alto) 0%, var(--wc-cielo-basso) 100%);
+}
+
+.container { border-radius: var(--wc-raggio-contenitore); }
+
+.result-card, .f-card, .user-rank { border-radius: var(--wc-raggio-card); }
+
+/* Badge dei punteggi: usano gli stessi tre colori */
+.card-badge.green, .f-acc-badge.green, .wsf-badge.green { background: var(--green); }
+.card-badge.yellow, .f-acc-badge.yellow, .wsf-badge.yellow { background: var(--orange); }
+.card-badge.red, .f-acc-badge.red, .wsf-badge.red { background: var(--red); }
+
+h1.rank-title, h1.video-title, .site-title { font-family: var(--wc-font-titoli); }

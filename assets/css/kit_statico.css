@@ -1,0 +1,61 @@
+/* ============================================================
+   KIT STATICO
+   Nel sito vero queste parti arrivano da JavaScript (calendario,
+   menu a comparsa) o da header.php. Qui sono riscritte a mano,
+   così il kit funziona aprendo il file con un doppio clic.
+   ============================================================ */
+
+/* ---------- Intestazione ---------- */
+.site-title {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.5rem, 5vw, 2.4rem);
+    color: #0088c0;
+    margin: 0;
+}
+
+.avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #4a5c64;
+    color: #fff;
+    font-weight: 700;
+    margin-right: 6px;
+}
+.avatar-sm { width: 28px; height: 28px; margin: 0; font-size: .8rem; }
+
+/* ---------- Barra in basso (telefono) ---------- */
+.bottom-nav .dropdown { flex: 1; display: flex; }
+.bottom-nav .bn-menu { text-decoration: none; }
+
+/* ---------- Calendario del mese (versione statica) ---------- */
+.cal { padding: 0 6px 6px; }
+.cal-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 18px 0 12px;
+}
+.cal-title { font-size: 1.75rem; font-weight: 400; margin: 0; }
+.cal-buttons { display: flex; gap: 10px; }
+.cal-btn { display: inline-block; padding: .4rem .75rem; border-radius: .25rem; color: #fff; }
+.cal-btn-today { background: #6c757d; }
+.cal-btn-nav { background: #2c3e50; }
+
+.cal-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.cal-table th, .cal-table td { border: 1px solid #ddd; }
+.cal-table th { text-align: center; padding: 4px 0; font-weight: 700; }
+.cal-day { height: 112px; vertical-align: top; padding: 2px; }
+.cal-day.other .cal-num { opacity: .4; }
+.cal-day.today { background: #fff8dc; }
+.cal-num { display: block; text-align: right; padding: 2px 4px; }
+
+.cal-ev { border-radius: 3px; color: #fff; font-size: .85em; padding: 1px 4px; margin-top: 2px; }
+.cal-ev.ok  { background: #008000; }
+.cal-ev.low { background: #ff0000; }
+.cal-ev.now { background: #ffd700; }
+.cal-ev.new { background: #0000ff; }
