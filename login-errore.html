@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesso - WeatherChallenge</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Raleway:wght@700;800;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style_login.css">
+</head>
+<body>
+
+    <main class="wcl-page">
+        <section class="wcl-card" aria-labelledby="wcl-titolo">
+
+            <header class="wcl-header">
+                <div class="wcl-brand">
+                    <a class="wcl-logo" href="#" aria-label="Vai al sito della scuola">
+                        <img src="assets/img/logo-placeholder.jpg" alt="Logo della scuola (segnaposto)" width="44" height="44">
+                    </a>
+                    <h1 id="wcl-titolo">Weather<span>Challenge</span></h1>
+                </div>
+                <p class="wcl-hook">Riesci a battere il meteo?</p>
+                <p class="wcl-sub">Prevedi il tempo di domani. La stazione del Liceo decide chi aveva ragione.</p>
+                <p class="wcl-live" id="wcl-live">
+                        <span aria-hidden="true">🌡️</span>
+                        Adesso al Liceo: <strong id="wcl-temp">14,7 °C</strong>
+                    </p>
+            </header>
+
+            <div class="wcl-body">
+                <div class="wcl-alert wcl-alert-err" role="alert"><strong>Accesso non riuscito.</strong> Riprova con il tuo account istituzionale.</div>
+                <!-- Nel sito vero questo bottone porta all'accesso con Google. Qui apre la dashboard -->
+                <form method="get" action="dashboard.html">
+                    <button type="submit" class="wcl-google">
+                        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <path fill="#4285F4" d="M21.35 12.27c0-.71-.06-1.39-.18-2.04H12v3.86h5.23a4.47 4.47 0 0 1-1.94 2.93v2.43h3.14c1.84-1.69 2.92-4.18 2.92-7.18z"/>
+                                <path fill="#34A853" d="M12 21.75c2.63 0 4.84-.87 6.45-2.35l-3.14-2.43c-.87.58-1.98.93-3.31.93-2.54 0-4.69-1.72-5.46-4.03H3.3v2.51A9.75 9.75 0 0 0 12 21.75z"/>
+                                <path fill="#FBBC05" d="M6.54 13.87A5.86 5.86 0 0 1 6.23 12c0-.65.11-1.28.31-1.87V7.62H3.3A9.75 9.75 0 0 0 2.25 12c0 1.57.38 3.06 1.05 4.38l3.24-2.51z"/>
+                                <path fill="#EA4335" d="M12 6.1c1.43 0 2.71.49 3.72 1.45l2.79-2.79C16.83 3.14 14.63 2.25 12 2.25a9.75 9.75 0 0 0-8.7 5.37l3.24 2.51C7.31 7.82 9.46 6.1 12 6.1z"/>
+                            </svg>
+                        <span>Entra con Google</span>
+                    </button>
+                </form>
+                <p class="wcl-note">Usa il tuo account istituzionale <strong>@liceodavincitn.it</strong></p>
+
+                <dl class="wcl-stats">
+                        <div class="is-main"><dt>previsioni</dt><dd>1.240</dd></div>
+                        <div><dt>giocatori</dt><dd>87</dd></div>
+                        <div><dt>precisione media</dt><dd>89%</dd></div>
+                    </dl>
+
+                <h2 class="wcl-h2">Come funziona</h2>
+                <ol class="wcl-steps">
+                    <li><span aria-hidden="true">✏️</span><b>Prevedi</b>il tempo di domani</li>
+                    <li><span aria-hidden="true">📡</span><b>La stazione misura</b>il meteo reale</li>
+                    <li><span aria-hidden="true">🏆</span><b>Ricevi il punteggio</b>e scala la classifica</li>
+                </ol>
+
+                <h2 class="wcl-h2">Un esempio di settimana</h2>
+                <div class="wcl-chart" role="img" aria-label="Esempio di punteggi giornalieri da 57% a 99%. I giorni sotto il 60% sono segnati in rosso.">
+                    <div class="wcl-bar is-ok"><span class="wcl-bar-val">60%</span><span class="wcl-bar-fill" style="height: 60%"></span><span class="wcl-bar-day">D</span></div>
+                    <div class="wcl-bar is-low"><span class="wcl-bar-val">57%</span><span class="wcl-bar-fill" style="height: 57%"></span><span class="wcl-bar-day">L</span></div>
+                    <div class="wcl-bar is-ok"><span class="wcl-bar-val">99%</span><span class="wcl-bar-fill" style="height: 99%"></span><span class="wcl-bar-day">M</span></div>
+                    <div class="wcl-bar is-ok"><span class="wcl-bar-val">60%</span><span class="wcl-bar-fill" style="height: 60%"></span><span class="wcl-bar-day">M</span></div>
+                    <div class="wcl-bar is-ok"><span class="wcl-bar-val">94%</span><span class="wcl-bar-fill" style="height: 94%"></span><span class="wcl-bar-day">G</span></div>
+                    <div class="wcl-bar is-ok"><span class="wcl-bar-val">94%</span><span class="wcl-bar-fill" style="height: 94%"></span><span class="wcl-bar-day">V</span></div>
+                    <div class="wcl-bar is-ok"><span class="wcl-bar-val">95%</span><span class="wcl-bar-fill" style="height: 95%"></span><span class="wcl-bar-day">S</span></div>
+                </div>
+                <p class="wcl-caption">Dati di esempio. Dopo l'accesso vedrai i tuoi.</p>
+
+                <p class="wcl-privacy">La classifica completa ti aspetta dopo l'accesso.</p>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
