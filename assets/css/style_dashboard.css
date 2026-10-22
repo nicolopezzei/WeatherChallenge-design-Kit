@@ -44,10 +44,10 @@
 }
 
 .cloud.large {
-    width: 500px;
-    height: 400px;
+    width: 200px;
+    height: 130px;
     top: 15%;
-    animation-duration: 60s;
+    animation-duration: 0.5s;
 }
 
 
