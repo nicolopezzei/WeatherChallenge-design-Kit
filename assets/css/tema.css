@@ -11,8 +11,8 @@
 
 :root {
     /* Cielo: sfondo a gradiente delle pagine con contenitore bianco */
-    --wc-cielo-alto: #ef4444;
-    --wc-cielo-basso: #ef4444;
+    --wc-cielo-alto: yellow;
+    --wc-cielo-basso: lightblue;
 
     /* Colori dei punteggi: bene, medio, male (valgono per tutte le pagine) */
     --green: #22c55e;
