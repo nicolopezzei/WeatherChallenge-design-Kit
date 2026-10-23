@@ -49,6 +49,7 @@
 .cal-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
 .cal-table th, .cal-table td { border: 1px solid #ddd; }
 .cal-table th { text-align: center; padding: 4px 0; font-weight: 700; }
+.cal-table-text {text-align: center; color:#000000; font-weight: 700;}
 .cal-day { height: 112px; vertical-align: top; padding: 2px; }
 .cal-day.other .cal-num { opacity: .4; }
 .cal-day.today { background: #fff8dc; }
