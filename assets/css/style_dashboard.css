@@ -316,4 +316,8 @@
         padding: 11px 0 !important;
         border-radius: 12px !important;
     }
+    .riga {
+        display: flex;
+    }
+    }
 }
