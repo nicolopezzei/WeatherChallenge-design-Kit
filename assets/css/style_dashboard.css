@@ -98,6 +98,7 @@
     .container {
         padding-left: 10px !important;
         padding-right: 10px !important;
+        width: 60%
     }
     h1.dash-title {
         font-size: 1.4rem !important;
