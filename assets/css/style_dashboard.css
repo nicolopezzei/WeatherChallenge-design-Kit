@@ -70,6 +70,7 @@
     padding-bottom: 10px !important;
 }
 
+
 .btn-pdf {
     display: inline-flex;
     align-items: center;
@@ -77,6 +78,9 @@
     margin-top: 12px;
     font-size: .9rem;
 }
+.riga {
+        display: flex;
+    }
 
 
 /* ═══════════════════════════════════════════════
@@ -320,4 +324,4 @@
         display: flex;
     }
     }
-}
+
